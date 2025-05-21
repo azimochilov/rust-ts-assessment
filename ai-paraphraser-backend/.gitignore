@@ -1,0 +1,8 @@
+/target
+.shuttle*
+Secrets*.toml
+
+
+*.env
+
+ai-paraphraser-backend/.env
