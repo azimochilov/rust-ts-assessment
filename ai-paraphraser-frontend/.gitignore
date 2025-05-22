@@ -28,3 +28,4 @@ dist-ssr
 
 # Environment variables
 ai-paraphraser-backend/.env
+.vercel

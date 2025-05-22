@@ -34,7 +34,7 @@ function App() {
     setLoading(true)
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/paraphrase`, {
+      const res = await fetch(`https://ai-paraphraser-backend-pnp9.shuttle.app/paraphrase`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: selected })
@@ -50,15 +50,14 @@ function App() {
       setText(newText)
       setSelection(null)
     } catch (err: unknown) {
-  if (err instanceof Error) {
-    console.error('Error:', err)
-    alert('Failed to paraphrase: ' + err.message)
-  } else {
-    console.error('Unexpected error:', err)
-    alert('An unknown error occurred while paraphrasing.')
-  }
-}
- finally {
+      if (err instanceof Error) {
+        console.error('Error:', err)
+        alert('Failed to paraphrase: ' + err.message)
+      } else {
+        console.error('Unexpected error:', err)
+        alert('An unknown error occurred while paraphrasing.')
+      }
+    } finally {
       setLoading(false)
     }
   }
